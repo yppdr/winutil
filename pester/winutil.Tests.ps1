@@ -7,7 +7,7 @@
 
     #>
 
-    $global:FormName = "Chris Titus Tech's Windows Utility"
+    $global:FormName = "KiwiNetwork Windows Utility"
 
 #endregion Configurable Variables
 

@@ -6,6 +6,10 @@ $BranchToUse = 'main'
     Author              : @ChrisTitusTech   
     Runspace Author     : @DeveloperDurp
     Version 0.1
+
+    Edit by     : Yannis Piot Pilot @yppdr
+    GitHub      : https://github.com/yppdr
+
 #>
 
 #region Variables
@@ -1390,34 +1394,21 @@ else{
         break
     }
 
-    $inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/ChrisTitusTech/winutil/$branch/MainWindow.xaml")
+    $inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/yppdr/winutil/$branch/MainWindow.xaml")
     $configs | ForEach-Object {
-        $sync["$psitem"] = Invoke-RestMethod "https://raw.githubusercontent.com/ChrisTitusTech/winutil/$branch/config/$psitem.json"
+        $sync["$psitem"] = Invoke-RestMethod "https://raw.githubusercontent.com/yppdr/winutil/$branch/config/$psitem.json"
     }
 }
 
 #endregion form    
 
-write-host ""                                                                                                                             
-write-host "    CCCCCCCCCCCCCTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT   "
-write-host " CCC::::::::::::CT:::::::::::::::::::::TT:::::::::::::::::::::T   "
-write-host "CC:::::::::::::::CT:::::::::::::::::::::TT:::::::::::::::::::::T  "
-write-host "C:::::CCCCCCCC::::CT:::::TT:::::::TT:::::TT:::::TT:::::::TT:::::T "
-write-host "C:::::C       CCCCCCTTTTTT  T:::::T  TTTTTTTTTTTT  T:::::T  TTTTTT"
-write-host "C:::::C                     T:::::T                T:::::T        "
-write-host "C:::::C                     T:::::T                T:::::T        "
-write-host "C:::::C                     T:::::T                T:::::T        "
-write-host "C:::::C                     T:::::T                T:::::T        "
-write-host "C:::::C                     T:::::T                T:::::T        "
-write-host "C:::::C                     T:::::T                T:::::T        "
-write-host "C:::::C       CCCCCC        T:::::T                T:::::T        "
-write-host "C:::::CCCCCCCC::::C      TT:::::::TT            TT:::::::TT       "
-write-host "CC:::::::::::::::C       T:::::::::T            T:::::::::T       "
-write-host "CCC::::::::::::C         T:::::::::T            T:::::::::T       "
-write-host "  CCCCCCCCCCCCC          TTTTTTTTTTT            TTTTTTTTTTT       "
-write-host ""
-write-host "====Chris Titus Tech====="
-write-host "=====Windows Toolbox====="
+    write-host ""                                                                                                                             
+    write-host "██   ██ ██ ██     ██ ██ ███    ██ ███████ ████████ ██     ██  ██████  ██████  ██   ██ "
+    write-host "██  ██  ██ ██     ██ ██ ████   ██ ██         ██    ██     ██ ██    ██ ██   ██ ██  ██  "
+    write-host "█████   ██ ██  █  ██ ██ ██ ██  ██ █████      ██    ██  █  ██ ██    ██ ██████  █████   "
+    write-host "██  ██  ██ ██ ███ ██ ██ ██  ██ ██ ██         ██    ██ ███ ██ ██    ██ ██   ██ ██  ██  "
+    write-host "██   ██ ██  ███ ███  ██ ██   ████ ███████    ██     ███ ███   ██████  ██   ██ ██   ██ "
+      
 
 if($gui -eq $true){
     $inputXML = $inputXML -replace 'mc:Ignorable="d"','' -replace "x:N",'N' -replace '^<Win.*', '<Window'
